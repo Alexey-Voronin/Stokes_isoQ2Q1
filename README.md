@@ -8,8 +8,10 @@ The published paper can be found at
    - [arxiv](https://arxiv.org/abs/2103.11967)
    - TBD
 
-# Running the code
 This git reposetory contains code described in above mention publications. 
+
+# Running the code
+
 To be able to use this code, you will need 
    - [PyAMG](https://github.com/pyamg/pyamg)
    - [Firedrake](https://www.firedrakeproject.org/)
