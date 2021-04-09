@@ -1,5 +1,5 @@
 import sys
-sys.path.append('../../../')
+sys.path.append('../../')
 from sysmg import *
 from sysmg.util.data_analysis import conv_factor, collect_residuals
 
@@ -9,7 +9,7 @@ GMRES        = {'module': "vcycle", "resid": 'abs'}
 TOL          = 1e-10
 MAXITER      = 100
 mg_lvls      = 2
-NEx          = 16
+NEx          = 64
 
 stokes_problems = dict()
 print('------------------------------------------------')
@@ -77,7 +77,7 @@ for BC in ['periodic', 'Washer' ]:
                                      maxiter=MAXITER, tol=TOL, GMRES=GMRES)
                 return resid_lo
 
-            resid_lo    = collect_residuals(fsolver, stokes_ho, plot=False, max_runs=55)
+            resid_lo    = collect_residuals(fsolver, stokes_ho, plot=False, max_runs=100)
             cf_lsq, itc = conv_factor(resid_lo, multi=True)
 
             print('\t\tparams=%s\trho=%.4f\titers=%d' % (str(params), cf_lsq, itc))

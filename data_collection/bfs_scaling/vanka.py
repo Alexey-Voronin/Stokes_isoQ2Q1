@@ -1,6 +1,6 @@
 import time
 import sys
-sys.path.append('../../../')
+sys.path.append('../../')
 from sysmg import *
 from sysmg.util.data_analysis import conv_factor, collect_residuals
 
@@ -28,10 +28,11 @@ for NEx in NEx_all:
 print('\n\nCollect Data:\n')
 #####################################
 for params in [
-                #(0.99, 0.67, 0.93, (1,1,1)), # W cycle iterations grow
-                #(0.80, 0.85, 0.00, (2,2,1)),
+                (0.99, 0.67, 0.93, (1,1,1)), # W cycle iterations grow
+                (0.80, 0.85, 0.00, (2,2,1)),
                 (1.05, 0.74, 0.78, (1,1,2)),
-               ]:
+                (0.98, 0.71, 1.05, (2,2,1)),
+                ]:
     print('params=', str(params))
     for NEx, lvls in zip(NEx_all, LVLs_all):
         stokes_ho    = stokes_problems[NEx]

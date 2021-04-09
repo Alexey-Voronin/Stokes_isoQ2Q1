@@ -1,5 +1,5 @@
 import sys
-sys.path.append('../../../')
+sys.path.append('../../')
 from sysmg import *
 from sysmg.util.data_analysis import conv_factor, collect_residuals
 
@@ -31,19 +31,20 @@ for BC in ['periodic', 'Washer']:
     #####################################
     for params in ["Table 2:",
                    "\t(no post-smoothing)",
-#                   (0.86, 0.78, 1.01, (1,0,1)),
+                   (0.86, 0.78, 1.01, (1,0,1)),
                    (0.90, 0.98, 0.83, (1,0,2)),
                    (0.85, 1.02, 0.82, (1,0,3)),
                    "\t(symmetrical)",
                    (0.99, 0.67, 0.93, (1,1,1)),
                    (1.05, 0.74, 0.78, (1,1,2)),
-#                   "Table 3:",
-#                   "\t(omega_0=0 (no relax on Q2Q1))",
-#                   (0.64, 0.00, 0.98, (0,0,1)),
-#                   (0.66, 0.00, 0.63, (0,0,2)),
-#                   "\t(omega_1=0 (no relax on isoQ2Q1))",
-#                   (0.48, 0.81, 0.00, (1,1,1)),
-#                   (0.80, 0.85, 0.00, (2,2,1)),
+                   (0.98, 0.71, 1.05, (2,2,1)),
+                   "Table 3:",
+                   "\t(omega_0=0 (no relax on Q2Q1))",
+                   (0.64, 0.00, 0.98, (0,0,1)),
+                   (0.66, 0.00, 0.63, (0,0,2)),
+                   "\t(omega_1=0 (no relax on isoQ2Q1))",
+                   (0.48, 0.81, 0.00, (1,1,1)),
+                   (0.80, 0.85, 0.00, (2,2,1)),
                   ]:
 
         if type(params) == str:
@@ -76,6 +77,6 @@ for BC in ['periodic', 'Washer']:
                                      maxiter=MAXITER, tol=TOL, GMRES=GMRES)
                 return resid_lo
 
-            resid_lo    = collect_residuals(fsolver, stokes_ho, plot=False, max_runs=55)
+            resid_lo    = collect_residuals(fsolver, stokes_ho, plot=False, max_runs=100)
             cf_lsq, itc = conv_factor(resid_lo, multi=True)
             print('\t\t%s\tparams=%s\trho=%.4f\titers=%d' % (cycle_type, str(params), cf_lsq, itc))

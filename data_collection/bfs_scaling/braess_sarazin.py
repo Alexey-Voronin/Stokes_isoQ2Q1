@@ -1,6 +1,6 @@
 import time
 import sys
-sys.path.append('../../../')
+sys.path.append('../../')
 from sysmg import *
 from sysmg.util.data_analysis import conv_factor, collect_residuals
 

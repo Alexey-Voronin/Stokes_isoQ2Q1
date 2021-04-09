@@ -1,5 +1,5 @@
 import sys
-sys.path.append('../../../')
+sys.path.append('../../')
 from sysmg import *
 from sysmg.util.data_analysis import conv_factor, collect_residuals
 
@@ -9,7 +9,7 @@ GMRES        = {'module': "vcycle", "resid": 'abs'}
 TOL          = 1e-10
 MAXITER      = 100
 mg_lvls      = 2
-NEx          = 16
+NEx          = 64
 
 stokes_problems = dict()
 print('------------------------------------------------')
@@ -37,10 +37,12 @@ for BC in ['periodic', 'Washer']:
                    "\t(symmetric)",
                    (0.99, 0.67, 0.93, (1,1,1)),
                    (1.05, 0.74, 0.78, (1,1,2)),
+                   (0.98, 0.71, 1.05, (2,2,1)),
                    "Table 3:",
                    "\t(omega_0=0 (no relax on Q2Q1))",
                    (0.64, 0.00, 0.98, (0,0,1)),
                    (0.66, 0.00, 0.63, (0,0,2)),
+                   (0.46, 0.00, 0.83, (1,1,2)),
                    "\t(omega_1=0 (no relax on isoQ2Q1))",
                    (0.48, 0.81, 0.00, (1,1,1)),
                    (0.80, 0.85, 0.00, (2,2,1)),
@@ -76,6 +78,6 @@ for BC in ['periodic', 'Washer']:
                                      maxiter=MAXITER, tol=TOL, GMRES=GMRES)
                 return resid_lo
 
-            resid_lo    = collect_residuals(fsolver, stokes_ho, plot=False, max_runs=55)
+            resid_lo    = collect_residuals(fsolver, stokes_ho, plot=False, max_runs=100)
             cf_lsq, itc = conv_factor(resid_lo, multi=True)
             print('\t\tparams=%s\trho=%.4f\titers=%d' % (str(params), cf_lsq, itc))
