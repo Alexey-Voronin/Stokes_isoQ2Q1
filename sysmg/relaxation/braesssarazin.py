@@ -153,8 +153,6 @@ class BraessSarazinSmoother:
             if  self.S_inv is not None:
                 self.S_inv = np.linalg.pinv(self.S.toarray())
 
-
-
         for i in range(0, self.relax_iters):
             # split up residual
             ru[:]   = (b[:vlen]-(self.M*u+self.BT*p))

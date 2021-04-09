@@ -22,11 +22,8 @@ class PeriodicProblem(object):
         self.nref      = nref
         self.use_quads = use_quads
 
-#    @staticmethod
     def periodise(self, m):
         # stolen from  firedrake/src/firedrake/firedrake/utility_meshes.py
-#        family          = "DG" if m.ufl_cell().is_simplex() else "DQ"
-#        coord_fs        = VectorFunctionSpace(m, family, 1, dim=2)
         family          = 'DQ'            if self.use_quads else 'DG'
         cell            = 'quadrilateral' if self.use_quads else 'triangle'
         coord_fs        = VectorFunctionSpace(m, FiniteElement(family, cell, 1, variant="equispaced"), dim=2)

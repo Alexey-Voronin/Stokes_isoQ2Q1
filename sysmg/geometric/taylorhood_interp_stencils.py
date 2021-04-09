@@ -151,18 +151,6 @@ def getInterpStencils(order = 1, quadrilateral=True, DEBUG=False):
 
 
 if __name__== "__main__":
-    """
-    stencils_p1 = getInterpStencils(order=1, discritization='P2-P1', DEBUG=False)
-    stencils_p2 = getInterpStencils(order=2, discritization='P2-P1', DEBUG=False)
-    print('P1 Stencils-------------------------------------------')
-    for name in stencils_p1.keys():
-        print(name); print(stencils_p1[name])
-    print('P2 Stencils-------------------------------------------')
-    for name in stencils_p2.keys():
-        print(name); print(stencils_p2[name])
-    print(stencils_q1)
-    print(stencils_p1)
-    """
     stencils_q1 = getInterpStencils(order=1, quadrilateral=False, DEBUG=False)
     stencils_q2 = getInterpStencils(order=2, quadrilateral=False, DEBUG=False)
     print('Q1 Stencils-------------------------------------------')

@@ -2,14 +2,12 @@ import scipy.sparse as sp
 from .taylorhood_interp_stencils import getInterpStencils
 
 def construct_interp(dof_grid_hier, dof_ext_grid_hier, bc_hier, interp_order,
-                     quadrilateral=True, coarsening_rate=(2,2), DEBUG=False,
-                     periodic=False):
+                     quadrilateral=True, coarsening_rate=(2,2),  periodic=False):
     """Construct interpolation opertor for fields discritized with Q1 or Q2 elements."""
     ###################################################################
     Ps            = []
-    DEBUG=False
     if coarsening_rate[0] == 2 and coarsening_rate[1] == 2:
-        stencils = getInterpStencils(interp_order, quadrilateral=quadrilateral, DEBUG=False)
+        stencils = getInterpStencils(interp_order, quadrilateral=quadrilateral)
     else:
          raise ValueError('coarsening_rate=%s is not supported atm' % str(coarsening_rate))
 
@@ -21,12 +19,6 @@ def construct_interp(dof_grid_hier, dof_ext_grid_hier, bc_hier, interp_order,
         cdofs_grid          = dof_grid_hier[lvl-1]
         fdofs_grid          = dof_grid_hier[lvl]
         extended_dofs_grid  = dof_ext_grid_hier[lvl]
-
-        if DEBUG:
-            print('periodic=', periodic)
-            print('extended_dofs_grid:\n', extended_dofs_grid[:15,:15])
-            print('fdofs_grid:\n', fdofs_grid[:15, :15])
-            print('cdofs_grid:\n', cdofs_grid[:15, :15])
 
         PT_rows = []; PT_cols = []; PT_data = []
         # obtain the interpolation stencils
@@ -83,10 +75,6 @@ def construct_interp(dof_grid_hier, dof_ext_grid_hier, bc_hier, interp_order,
                     dof_patch     = extended_dofs_grid[ifine:(ifine+target_height),
                                                        jfine:(jfine+target_width)]
 
-                    if DEBUG:
-                        print('coarse_dof=', coarse_dof)
-                        print('path(1):\n', dof_patch)
-
                     for idx in range(dof_patch.shape[0]):
                         for idy in range(dof_patch.shape[1]):
                             fine_dof = dof_patch[idx, idy]
@@ -130,8 +118,6 @@ def construct_interp(dof_grid_hier, dof_ext_grid_hier, bc_hier, interp_order,
 
                     dof_patch = extended_dofs_grid[ifine:(ifine+weights_stencil.shape[0]),
                                                    jfine:(jfine+weights_stencil.shape[1])]
-                    if DEBUG:
-                        print('path(2):\n', dof_patch)
 
                     for idx in range(dof_patch.shape[0]):
                         for idy in range(dof_patch.shape[1]):

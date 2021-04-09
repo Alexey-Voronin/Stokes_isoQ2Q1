@@ -2,7 +2,6 @@ import numpy as np
 import firedrake
 from .taylorhood_interp           import *
 
-
 def geometric_interp(stokes,  coarsening_rate=(2,2), interpolation_order=(1,1)):
     """Construct geometric interpolation operators for Stokes system."""
     #print('geometric_interp')

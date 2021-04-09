@@ -19,13 +19,13 @@ class StokesSystem(object):
     domain                  = None
     mesh                    = None
     mesh_hierarchy          = None
-    p_fxn_space             = None
-    v_fxn_space             = None
+    p_fxn_space             = None # firedrake object
+    v_fxn_space             = None # firedrake object
     quadrilateral           = None
     isoQ2_Q1                = None
 
-    bcs_v_hier              = None
-    bcs_p_hier              = None
+    bcs_v_hier              = None # list of firedrake objects
+    bcs_p_hier              = None # list of firedrake objects
     bcs_v_nodes_hier        = None
     bcs_p_nodes_hier        = None
 
@@ -34,6 +34,10 @@ class StokesSystem(object):
     lo_fe_precond           = None
     NEx_hier                = None
     NEy_hier                = None
+    """
+    Ax = | M   BT | = b
+         | B   -Z |
+    """
     A                       = None
     A_without_bc            = None
     B_without_bc            = None
@@ -70,13 +74,12 @@ class StokesSystem(object):
     v_ext_grid_hier         = None
     p_ext_grid_hier         = None
 
-    v_space_hier            = None
-    p_space_hier            = None
-    vp_space_hier           = None
+    v_space_hier            = None # firedrake object
+    p_space_hier            = None # firedrake object
+    vp_space_hier           = None # firedrake object
 
-    upsol_firedrake         = None
+    upsol_firedrake         = None # firedrake object
     lo_fe_sys               = None
-    upsol_firedrake         = None
 
     def __init__(self):
         """
