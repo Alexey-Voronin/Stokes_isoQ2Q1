@@ -16,3 +16,4 @@ To be able to use this code, you will need
    - [PyAMG](https://github.com/pyamg/pyamg)
    - [Firedrake](https://www.firedrakeproject.org/)
 
+The code can be found in sysmg directory and all the relevant data collection scripts are in the data_collection folders. 
