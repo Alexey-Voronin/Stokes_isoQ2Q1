@@ -44,11 +44,11 @@ def solve(A, b, x0=None, M=None, maxiter=40, restart=20, tol=1e-8,
             and what type of residual to report (rel. or abs.).
 
             Options:
-                - 'module' :  'vcycle', 'scipy', ('pyamg', 'gmres'), ('pyamg', 'fgmres')
+                - 'module' :  'stationary', 'scipy', ('pyamg', 'gmres'), ('pyamg', 'fgmres')
                 - "resid"  : 'rel', 'abs'
 
             Examples:
-                - {'module': "vcycle",            "resid": 'abs'}
+                - {'module': "stationary",            "resid": 'abs'}
                 - {'module': ("pyamg", 'fgmres'), "resid": 'abs'}
 
     Returns:
@@ -70,7 +70,7 @@ def solve(A, b, x0=None, M=None, maxiter=40, restart=20, tol=1e-8,
     cb      = CallBack_x(A, b, M) if precond_type == 'rel' else CallBack_x(A, b)
 
     x1 = None
-    if module_type == 'vcycle':
+    if module_type == 'stationary':
         #print('V-cycle')
         r     = b-A*x0
         x1    = x0
@@ -99,6 +99,7 @@ def solve(A, b, x0=None, M=None, maxiter=40, restart=20, tol=1e-8,
                                   M=M, callback=cb, orthog='mgs')
     elif module_type == ('pyamg', 'fgmres'):
         #print('pyamg-fgmres')
+
         x1, info    = pyamg_fgmres(A, b, x0=x0, tol=tol,
                                   restrt=restart, # inner iteration
                                   maxiter=int(maxiter/restart), # outer iter
