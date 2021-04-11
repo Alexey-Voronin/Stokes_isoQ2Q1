@@ -253,11 +253,11 @@ class Vanka(object):
             # quiet slow..
             self.scaled_Aloc_inv_full = sp.block_diag(scaled_Aloc_inv, format="csr")
 
-
             self.scaled_Aloc_inv_full.sort_indices()
             self.P.sort_indices()
 
-            #self.scaled_Aloc_inv_full = sp.bsr_matrix(self.scaled_Aloc_inv_full, blocksize=Aloc_inv.shape)
+            if self.stokes.periodic:
+                self.scaled_Aloc_inv_full = sp.bsr_matrix(self.scaled_Aloc_inv_full, blocksize=Aloc_inv.shape)
 
             del self.Aloc_inv
             del scaled_Aloc_inv
@@ -333,6 +333,12 @@ class Vanka(object):
                     r_split = self.P*r
                     # compute correction block-wise and then assemble it
                     x      += self.omega_g*(self.P.T*(self.scaled_Aloc_inv_full*r_split))
+                    """
+                    # for profiling
+                    unassembled_sol = self.scaled_Aloc_inv_full*r_split
+                    assembled_sol   = self.P.T*unassembled_sol
+                    x              += self.omega_g*assembled_sol
+                    """
             else: # old implementation
                 rloc = np.zeros((51,)) # assumes max size of Q2-Q1 patch (25*2+1)
                 for i in range(self.relax_iters):
