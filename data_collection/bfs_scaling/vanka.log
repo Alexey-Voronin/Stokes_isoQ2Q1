@@ -1,0 +1,65 @@
+------------------------------------------------
+System set-up:  bfs
+NEx=8	time=1.58 s
+NEx=16	time=1.58 s
+NEx=32	time=2.21 s
+NEx=64	time=4.69 s
+NEx=128	time=15.24 s
+NEx=256	time=80.13 s
+((2, 2, 1), 0.8, 0.85, 0.0)
+	NEx=  8   DoFs=     515   mg_lvls= 2
+						V   iters= 12   time(s)=0.123
+						W   iters= 12   time(s)=0.063
+	NEx= 16   DoFs=    1891   mg_lvls= 3
+						V   iters= 20   time(s)=0.462
+						W   iters= 20   time(s)=0.461
+	NEx= 32   DoFs=    7235   mg_lvls= 4
+						V   iters= 33   time(s)=2.442
+						W   iters= 33   time(s)=2.627
+	NEx= 64   DoFs=   28291   mg_lvls= 5
+						V   iters= 77   time(s)=19.956
+						W   iters= 77   time(s)=23.500
+	NEx=128   DoFs=  111875   mg_lvls= 6
+						V   iters=100   time(s)=101.217
+						W   iters=100   time(s)=123.438
+	NEx=256   DoFs=  444931   mg_lvls= 7
+						V   iters=100   time(s)=437.624
+						W   iters=100   time(s)=557.629
+((1, 1, 2), 1.05, 0.74, 0.78)
+	NEx=  8   DoFs=     515   mg_lvls= 2
+						V   iters=  9   time(s)=0.169
+						W   iters=  9   time(s)=0.043
+	NEx= 16   DoFs=    1891   mg_lvls= 3
+						V   iters= 10   time(s)=0.302
+						W   iters= 10   time(s)=0.209
+	NEx= 32   DoFs=    7235   mg_lvls= 4
+						V   iters= 11   time(s)=0.919
+						W   iters= 10   time(s)=0.948
+	NEx= 64   DoFs=   28291   mg_lvls= 5
+						V   iters= 11   time(s)=3.241
+						W   iters= 10   time(s)=3.762
+	NEx=128   DoFs=  111875   mg_lvls= 6
+						V   iters= 12   time(s)=16.011
+						W   iters= 10   time(s)=16.930
+	NEx=256   DoFs=  444931   mg_lvls= 7
+						V   iters= 14   time(s)=66.965
+						W   iters= 10   time(s)=70.442
+((2, 2, 1), 0.98, 0.71, 1.05)
+	NEx=  8   DoFs=     515   mg_lvls= 2
+						V   iters=  9   time(s)=0.186
+						W   iters=  9   time(s)=0.042
+	NEx= 16   DoFs=    1891   mg_lvls= 3
+						V   iters= 12   time(s)=0.301
+						W   iters= 10   time(s)=0.194
+	NEx= 32   DoFs=    7235   mg_lvls= 4
+						V   iters= 17   time(s)=1.423
+						W   iters= 13   time(s)=1.004
+	NEx= 64   DoFs=   28291   mg_lvls= 5
+						V   iters= 23   time(s)=6.668
+						W   iters= 18   time(s)=5.680
+	NEx=128   DoFs=  111875   mg_lvls= 6
+						V   iters=100   time(s)=111.308
+						W   iters= 21   time(s)=27.577
+	NEx=256   DoFs=  444931   mg_lvls= 7
+						V   iters=100   time(s)=459.155
+						W   iters= 24   time(s)=135.150

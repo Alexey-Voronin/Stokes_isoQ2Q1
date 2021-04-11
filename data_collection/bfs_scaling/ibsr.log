@@ -1,0 +1,46 @@
+------------------------------------------------
+System set-up:  bfs
+NEx=8	time=1.77 s
+NEx=16	time=1.60 s
+NEx=32	time=2.31 s
+NEx=64	time=4.69 s
+NEx=128	time=15.41 s
+NEx=256	time=81.52 s
+((1, 1, 1), 0.97, 0.91, 1.04, 1.02, 0.93, 0.78, 0.86)
+	NEx=  8   DoFs=     515   mg_lvls= 2
+						V   iters= 10   time(s)=0.166
+						W   iters= 10   time(s)=0.046
+	NEx= 16   DoFs=    1891   mg_lvls= 3
+						V   iters= 11   time(s)=0.219
+						W   iters= 10   time(s)=0.073
+	NEx= 32   DoFs=    7235   mg_lvls= 4
+						V   iters= 12   time(s)=0.303
+						W   iters= 10   time(s)=0.179
+	NEx= 64   DoFs=   28291   mg_lvls= 5
+						V   iters= 13   time(s)=0.633
+						W   iters= 10   time(s)=0.547
+	NEx=128   DoFs=  111875   mg_lvls= 6
+						V   iters= 14   time(s)=2.172
+						W   iters= 10   time(s)=2.298
+	NEx=256   DoFs=  444931   mg_lvls= 7
+						V   iters= 16   time(s)=11.199
+						W   iters= 10   time(s)=8.037
+((2, 2, 1), 1.04, 0.55, 0.59, 0.72, 0.99, 0.85, 1.3)
+	NEx=  8   DoFs=     515   mg_lvls= 2
+						V   iters=  8   time(s)=0.175
+						W   iters=  8   time(s)=0.071
+	NEx= 16   DoFs=    1891   mg_lvls= 3
+						V   iters= 10   time(s)=0.251
+						W   iters=  8   time(s)=0.136
+	NEx= 32   DoFs=    7235   mg_lvls= 4
+						V   iters= 12   time(s)=0.294
+						W   iters=  8   time(s)=0.151
+	NEx= 64   DoFs=   28291   mg_lvls= 5
+						V   iters= 14   time(s)=0.806
+						W   iters=  8   time(s)=0.856
+	NEx=128   DoFs=  111875   mg_lvls= 6
+						V   iters= 15   time(s)=4.536
+						W   iters=  8   time(s)=3.021
+	NEx=256   DoFs=  444931   mg_lvls= 7
+						V   iters= 16   time(s)=13.999
+						W   iters=  8   time(s)=8.208
