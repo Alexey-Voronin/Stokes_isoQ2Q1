@@ -1,6 +1,7 @@
 source ~/firedrake/bin/activate
 
-DIRs=('two_grid' 'multi_grid') # 'bfs_scaling')
+# DIRs=('two_grid' 'multi_grid') # 'bfs_scaling')
+DIRs=('bfs_scaling')
 
 for dir in ${DIRs[*]}; do
    cd $dir

@@ -46,14 +46,14 @@ def collect(relaxation, NExs=[8, 16, 32, 64, 128, 256], problems=['bfs'],
                                                        'psolve_iters'   :            1, 'omega_g'      : omega_0})
                 else: # Vanka
                     (nu_1, nu_2, gamma), tau, omega_0, omega_1   = params
-                    smoother_inner  = ('Vanka', {'type'  : 'geometric', 'update': 'additive',
+                    smoother_inner  = ('Vanka', {'type'  : 'geometric', 'update': 'additive-opt',
                                                  'vcycle':  (1, 1),     'omega_g' : omega_1})
                     inner_cycle     =  dict(multigrid_type    = 'geometric', interpolation_type = (1,1),
                                             coarsenining_rate = (2, 2),               Q2_iso_Q1 = True,
                                              tau      = tau,
                                              gamma    = gamma,
                                              smoother = smoother_inner)
-                    outer_cycle     = ('Vanka', {'type'  : 'geometric',  'update' : 'additive',
+                    outer_cycle     = ('Vanka', {'type'  : 'geometric',  'update' : 'additive-opt',
                                                   'vcycle':  (nu_1, nu_2), 'omega_g' : omega_0})
 
 
@@ -68,10 +68,14 @@ def collect(relaxation, NExs=[8, 16, 32, 64, 128, 256], problems=['bfs'],
 
                     gmg_lo     = gmg_lo_obj.get_solver()
 
-                    tic        = time.perf_counter()
-                    x, resid_lo= solve(stokes_ho.A, stokes_ho.b, x0=None, M=gmg_lo,
-                                         maxiter=maxiter, tol=tol, GMRES=solver_type)
-                    itc        = len(resid_lo)
-                    toc        = time.perf_counter()
+                    times = []
+                    for i in range(5):
+                        tic        = time.perf_counter()
+                        x, resid_lo= solve(stokes_ho.A, stokes_ho.b, x0=None, M=gmg_lo,
+                                             maxiter=maxiter, tol=tol, GMRES=solver_type)
+                        itc        = len(resid_lo)
+                        toc        = time.perf_counter()
+                        times.append(toc-tic)
 
-                    print('\t\t\t\t\t\t{0:1s}   iters={1:3d}   time(s)={2:.3f}'.format(cycle_type, itc, toc-tic))
+
+                    print('\t\t\t\t\t\t{0:1s}   iters={1:3d}   time(s)={2:.3f}'.format(cycle_type, itc, np.mean(times)))
