@@ -1,0 +1,66 @@
+------------------------------------------------
+System set-up
+-periodic
+-Washer
+
+
+Collect Data:
+
+BC_type=periodic--------------------------------------
+Table 2:
+	(no post-smoothing)
+		V ((1, 0, 1), 0.86, 0.78, 1.01)                            rho_lsq=0.8640   rho_geom=0.8640   iters_gmg=100   iters_gmres= 34
+		W ((1, 0, 1), 0.86, 0.78, 1.01)                            rho_lsq=0.5000   rho_geom=0.5002   iters_gmg= 25   iters_gmres= 17
+		V ((1, 0, 2), 0.9, 0.98, 0.83)                             rho_lsq=0.4685   rho_geom=0.4684   iters_gmg= 21   iters_gmres= 12
+		W ((1, 0, 2), 0.9, 0.98, 0.83)                             rho_lsq=0.1884   rho_geom=0.1881   iters_gmg= 14   iters_gmres= 11
+		V ((1, 0, 3), 0.85, 1.02, 0.82)                            rho_lsq=0.2082   rho_geom=0.2108   iters_gmg= 14   iters_gmres= 10
+		W ((1, 0, 3), 0.85, 1.02, 0.82)                            rho_lsq=0.1848   rho_geom=0.1844   iters_gmg= 14   iters_gmres= 10
+	(symmetric)
+		V ((1, 1, 1), 0.99, 0.67, 0.93)                            rho_lsq=0.9901   rho_geom=0.9901   iters_gmg=100   iters_gmres= 24
+		W ((1, 1, 1), 0.99, 0.67, 0.93)                            rho_lsq=0.3263   rho_geom=0.3337   iters_gmg= 18   iters_gmres= 15
+		V ((1, 1, 2), 1.05, 0.74, 0.78)                            rho_lsq=0.1791   rho_geom=0.1762   iters_gmg= 12   iters_gmres= 10
+		W ((1, 1, 2), 1.05, 0.74, 0.78)                            rho_lsq=0.0974   rho_geom=0.0943   iters_gmg= 10   iters_gmres=  9
+		V ((2, 2, 1), 0.98, 0.71, 1.05)                            rho_lsq=0.5228   rho_geom=0.5228   iters_gmg= 28   iters_gmres= 19
+		W ((2, 2, 1), 0.98, 0.71, 1.05)                            rho_lsq=0.6439   rho_geom=0.6439   iters_gmg= 41   iters_gmres= 18
+Table 3:
+	(omega_0=0 (no relax on Q2Q1))
+		V ((0, 0, 1), 0.64, 0.0, 0.98)                             rho_lsq=1.0219   rho_geom=1.0219   iters_gmg=100   iters_gmres= 81
+		W ((0, 0, 1), 0.64, 0.0, 0.98)                             rho_lsq=0.7344   rho_geom=0.7344   iters_gmg= 52   iters_gmres= 23
+		V ((0, 0, 2), 0.66, 0.0, 0.63)                             rho_lsq=0.9381   rho_geom=0.9381   iters_gmg=100   iters_gmres= 32
+		W ((0, 0, 2), 0.66, 0.0, 0.63)                             rho_lsq=0.5490   rho_geom=0.5490   iters_gmg= 38   iters_gmres= 18
+		V ((1, 1, 2), 0.46, 0.0, 0.83)                             rho_lsq=0.7800   rho_geom=0.7800   iters_gmg= 75   iters_gmres= 23
+		W ((1, 1, 2), 0.46, 0.0, 0.83)                             rho_lsq=0.7805   rho_geom=0.7805   iters_gmg= 74   iters_gmres= 23
+	(omega_1=0 (no relax on isoQ2Q1))
+		V ((1, 1, 1), 0.48, 0.81, 0.0)                             rho_lsq=0.9888   rho_geom=0.9972   iters_gmg=100   iters_gmres= 90
+		W ((1, 1, 1), 0.48, 0.81, 0.0)                             rho_lsq=0.9888   rho_geom=0.9972   iters_gmg=100   iters_gmres= 90
+		V ((2, 2, 1), 0.8, 0.85, 0.0)                              rho_lsq=5.6042   rho_geom=5.6042   iters_gmg= 52   iters_gmres= 67
+		W ((2, 2, 1), 0.8, 0.85, 0.0)                              rho_lsq=5.6042   rho_geom=5.6042   iters_gmg= 52   iters_gmres= 67
+BC_type=Washer--------------------------------------
+Table 2:
+	(no post-smoothing)
+		V ((1, 0, 1), 0.86, 0.78, 1.01)                            rho_lsq=0.8038   rho_geom=0.8038   iters_gmg= 84   iters_gmres= 27
+		W ((1, 0, 1), 0.86, 0.78, 1.01)                            rho_lsq=0.3461   rho_geom=0.3679   iters_gmg= 20   iters_gmres= 16
+		V ((1, 0, 2), 0.9, 0.98, 0.83)                             rho_lsq=0.1997   rho_geom=0.1995   iters_gmg= 14   iters_gmres= 11
+		W ((1, 0, 2), 0.9, 0.98, 0.83)                             rho_lsq=0.2003   rho_geom=0.2000   iters_gmg= 14   iters_gmres= 11
+		V ((1, 0, 3), 0.85, 1.02, 0.82)                            rho_lsq=0.1923   rho_geom=0.1920   iters_gmg= 14   iters_gmres= 10
+		W ((1, 0, 3), 0.85, 1.02, 0.82)                            rho_lsq=0.1923   rho_geom=0.1921   iters_gmg= 14   iters_gmres= 10
+	(symmetric)
+		V ((1, 1, 1), 0.99, 0.67, 0.93)                            rho_lsq=0.5306   rho_geom=0.5306   iters_gmg= 30   iters_gmres= 17
+		W ((1, 1, 1), 0.99, 0.67, 0.93)                            rho_lsq=0.3022   rho_geom=0.3026   iters_gmg= 17   iters_gmres= 15
+		V ((1, 1, 2), 1.05, 0.74, 0.78)                            rho_lsq=0.1828   rho_geom=0.1804   iters_gmg= 12   iters_gmres= 10
+		W ((1, 1, 2), 1.05, 0.74, 0.78)                            rho_lsq=0.0929   rho_geom=0.0903   iters_gmg= 10   iters_gmres=  9
+		V ((2, 2, 1), 0.98, 0.71, 1.05)                            rho_lsq=0.5284   rho_geom=0.5283   iters_gmg= 32   iters_gmres= 18
+		W ((2, 2, 1), 0.98, 0.71, 1.05)                            rho_lsq=0.5553   rho_geom=0.5553   iters_gmg= 33   iters_gmres= 16
+Table 3:
+	(omega_0=0 (no relax on Q2Q1))
+		V ((0, 0, 1), 0.64, 0.0, 0.98)                             rho_lsq=0.8235   rho_geom=0.8235   iters_gmg= 83   iters_gmres= 32
+		W ((0, 0, 1), 0.64, 0.0, 0.98)                             rho_lsq=0.6354   rho_geom=0.6354   iters_gmg= 44   iters_gmres= 23
+		V ((0, 0, 2), 0.66, 0.0, 0.63)                             rho_lsq=0.7942   rho_geom=0.7942   iters_gmg= 76   iters_gmres= 25
+		W ((0, 0, 2), 0.66, 0.0, 0.63)                             rho_lsq=0.5485   rho_geom=0.5485   iters_gmg= 38   iters_gmres= 18
+		V ((1, 1, 2), 0.46, 0.0, 0.83)                             rho_lsq=0.7748   rho_geom=0.7748   iters_gmg= 72   iters_gmres= 23
+		W ((1, 1, 2), 0.46, 0.0, 0.83)                             rho_lsq=0.7739   rho_geom=0.7739   iters_gmg= 72   iters_gmres= 22
+	(omega_1=0 (no relax on isoQ2Q1))
+		V ((1, 1, 1), 0.48, 0.81, 0.0)                             rho_lsq=0.9727   rho_geom=0.9212   iters_gmg=100   iters_gmres= 90
+		W ((1, 1, 1), 0.48, 0.81, 0.0)                             rho_lsq=0.9727   rho_geom=0.9212   iters_gmg=100   iters_gmres= 90
+		V ((2, 2, 1), 0.8, 0.85, 0.0)                              rho_lsq=5.0636   rho_geom=5.0636   iters_gmg= 52   iters_gmres= 69
+		W ((2, 2, 1), 0.8, 0.85, 0.0)                              rho_lsq=5.0636   rho_geom=5.0636   iters_gmg= 52   iters_gmres= 69
