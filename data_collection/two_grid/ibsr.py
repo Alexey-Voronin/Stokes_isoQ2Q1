@@ -2,9 +2,7 @@ from collect import collect
 
 #####################################
 # Solver Params
-solver_types = [{'module': "stationary",        "resid": 'abs'},
-                #{'module': ("pyamg", 'fgmres'), "resid": 'abs'}
-                ]
+solver_types = [{'module': "stationary",        "resid": 'abs'}]
 cycle_types  = ['V']
 mg_lvls      = 2
 NEx          = 64

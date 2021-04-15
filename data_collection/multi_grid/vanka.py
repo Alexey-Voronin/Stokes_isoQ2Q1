@@ -3,8 +3,8 @@ from collect import collect
 #####################################
 # Solver Params
 solver_types = [{'module': "stationary",        "resid": 'abs'},
-                {'module': ("pyamg", 'fgmres'), "resid": 'abs'}
-                ]
+                {'module': ("pyamg", 'fgmres'), "resid": 'abs'}]
+
 cycle_types  = ['V', 'W']
 mg_lvls      = 5
 NEx          = 64

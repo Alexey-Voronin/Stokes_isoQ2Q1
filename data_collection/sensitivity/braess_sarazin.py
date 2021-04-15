@@ -6,7 +6,7 @@ from sysmg.util.data_analysis import conv_factor, collect_residuals
 
 #####################################
 # system
-NEx          = 16
+NEx          = 32
 stokes_problems = dict()
 print('------------------------------------------------')
 print('System set-up')
@@ -16,7 +16,7 @@ for BC in ['Washer' ]:
                                       Solve= False, quadrilateral= True, BCs=BC)
 
 # Solver Params
-GMRES        = {'module': "vcycle", "resid": 'abs'}
+GMRES        = {'module': "stationary", "resid": 'abs'}
 TOL          = 1e-10
 mg_lvls      = 2
 MAXITER      = 50
@@ -70,7 +70,7 @@ for BC in ['Washer']:
                                      maxiter=MAXITER, tol=TOL, GMRES=GMRES)
                 return resid_lo
 
-            resid_lo    = collect_residuals(fsolver, stokes_ho, plot=False, max_runs=20)
+            resid_lo    = collect_residuals(fsolver, stokes_ho, max_runs=20)
             cf_lsq, itc = conv_factor(resid_lo, multi=True)
 
             rho[i,j]    = cf_lsq

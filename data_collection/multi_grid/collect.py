@@ -5,7 +5,7 @@ from sysmg.util.data_analysis import conv_factor, collect_residuals
 
 
 def collect(relaxation, NEx=64, problems=['periodic', 'Washer'],
-           solver_types=[{'module': "stationary",        "resid": 'abs'}],
+           solver_types=[{'module': "stationary", "resid": 'abs'}],
            cycle_types=['V', 'W'], mg_lvls=2, tol=1e-10, maxiter=100):
 
     print('------------------------------------------------')
