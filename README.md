@@ -12,7 +12,7 @@ A well-known strategy for building effective preconditioners for higher-order di
 
 The published paper can be found at
    - [arxiv](https://arxiv.org/abs/2103.11967)
-   - TBD
+   - [NLA](https://doi.org/10.1002/nla.2426)
 
 This git reposetory contains code described in above mention publications. 
 
